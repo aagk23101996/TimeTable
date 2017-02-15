@@ -1,23 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="abhishekagarwal371.thesrmapp">
+    package="abhishekagarwal371.timetable">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:supportsRtl="true">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="abhishekagarwal371.timetable.MainActivity"
+            android:parentActivityName="abhishekagarwal371.timetable.RoutineActivity"
+
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="abhishekagarwal371.timetable.SubAct"
+            android:parentActivityName="abhishekagarwal371.timetable.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSub" />
+        <activity
+            android:name="abhishekagarwal371.timetable.DayOrderSubChoooseActivity"
+            android:parentActivityName="abhishekagarwal371.timetable.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="abhishekagarwal371.timetable.RoutineActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name="abhishekagarwal371.timetable.EditActivity"
+            android:parentActivityName="abhishekagarwal371.timetable.RoutineActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="abhishekagarwal371.timetable.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SubAct"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name="abhishekagarwal371.timetable.TimingActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
